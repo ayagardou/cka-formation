@@ -1,0 +1,12 @@
+# SECRET
+## create
+kubectl create secret generic <secret_name> --from-literal=password=<password_value>
+kubectl create secret generic <secret_name> --from-file=ssh-private-key=<path_to_private_key> --from-file=ssh-public-key=<path_to_public_key>
+
+## creating secrets using cli and manifest file
+echo username dbuser1 | base64
+<return value>
+echo password <password> | base64
+<return value>
+
+kubectl apply -f secrets.yml # creating secrets from file secrets.yml

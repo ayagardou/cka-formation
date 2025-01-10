@@ -1,0 +1,26 @@
+apiVersion: apps/v1 #
+kind: ReplicaSet
+
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  
+selector:
+  matchLabels:
+    tier: frontend # try tp match items that are labeled as tier: frontend so they become part of the ReplicaSet
+
+  # could be in a different manifest file
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: caddy-container
+        image: caddy

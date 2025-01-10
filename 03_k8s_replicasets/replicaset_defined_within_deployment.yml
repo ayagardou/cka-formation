@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: nginx-loadbalancer-deployment
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx # will look for pod with app with nginx value
+
+# can be defined in an other file
+template:
+  metadata:
+    labels:
+      app: nginx
+  spec:
+    containers:
+    - name: nginx
+      image: nginx:latest #name of the image
+      ports:
+      - containerPort: 80

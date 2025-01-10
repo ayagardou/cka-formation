@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: busybox
+
+spec:
+  containers:
+  - name: busybox-container
+    image: gcr.io/google_containers/busybox
+
+  env:
+  - name: PORT
+    valueFrom:
+      configMapKeyRef:
+        name: app1config
+        key: port
