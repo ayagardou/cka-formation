@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: busybox_pod
+  annotations:
+    creator: bidon@mail.com
+    environment: testing
+
+spec:
+  volumes:
+  - name: demo-volume
+    emptyDir:
+      sizeLimit: 500Mi
+
+  containers:
+  - name: busybox-container
+    image: busybox:latest
+    command: ['sh'; '-c', 'while true; do date; sleep 3; done'] # command that will run all the time
+    volumeMounts:
+    - mountPath: /demo # temp scratch working space that will exist while the pod is running
