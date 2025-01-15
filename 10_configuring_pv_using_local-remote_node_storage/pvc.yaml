@@ -5,9 +5,9 @@ metadata:
   name: pvc1
 
 spec:
+  storageClassName: manual
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
-  storageClassName: fast # is defined by technicians ahead of time
+      storage: 3Gi

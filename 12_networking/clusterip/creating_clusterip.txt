@@ -1,0 +1,19 @@
+get the manifest information (pod and service)
+cat <pod-manifest>
+cat <clusterip-manifest>
+
+kubectl apply -f <pod_manifest>
+kubectl apply -f <pod2_manifest>
+kubectl apply -f <clusterip_manifest>
+
+kubectl get pod
+kubectl get service
+
+kubectl describe service <service_name>
+    endpoints are pods ip addresses
+
+kubectl get pod -o wide
+    ip should match the endpoints 
+
+kubectl exec -it <pod2> -- sh
+wget -O- <pod1_ip>

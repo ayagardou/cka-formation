@@ -10,4 +10,4 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: fast # is defined by technicians ahead of time
+  storageClassName: managed # for a managed disk in azure - will be created automatically

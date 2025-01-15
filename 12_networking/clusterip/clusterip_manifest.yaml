@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: kubernetes
+
+spec:
+  type: ClusterIp
+  ports:
+  - targetPort: 80 # listening port in the pod
+    port: 80
+
+  selector: # used to match pods labeled
+    app: app1 # is the same as the label on the pod manifest

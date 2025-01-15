@@ -1,0 +1,7 @@
+// using command kubectl edit configmap coredns -n kube-system
+
+sandbox.local:53 {
+    errors
+    cache 30
+    forward . 192.168.45.36
+}

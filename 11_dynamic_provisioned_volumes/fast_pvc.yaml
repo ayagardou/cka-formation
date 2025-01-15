@@ -2,12 +2,12 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 
 metadata:
-  name: pvc1
+  name: claim1
 
 spec:
   accessModes:
   - ReadWriteOnce
+  storageClassName: fast
   resources:
     requests:
-      storage: 5Gi
-  storageClassName: fast # is defined by technicians ahead of time
+      storage: 10Gi

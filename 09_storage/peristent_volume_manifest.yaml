@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+
+metadata:
+  name: block-pv
+
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - readWriteOnce
+  volumeMode: Block
+  persistentVolumeReclaimPolicy: Retain
+  fc:
+    targetWWNs: ["50060e801049cfd1"] # used to find storage over the network
+    lun: 0
+    readOnly: false
