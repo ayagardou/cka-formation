@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: network-policy
+  namespace: default
+
+spec:
+  podSelector:
+    matchLabels:
+      environment: production
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            environment: sandbox # allowing sandbox pods to communicate with production pods
+  egress:
+    - to:
+      - podSelector:
+          matchLabels:
+            environment: sandbox # allowing production pods to communicate with sandbox pods

@@ -1,0 +1,20 @@
+get the manifest information (pod and service)
+cat <pod-manifest>
+cat <nodeport-manifest>
+
+kubectl apply -f <pod_manifest>
+kubectl apply -f <nodeport_manifest>
+
+kubectl get svc
+    dont expect to see external ip for nodeport
+kubectl describe service <nodeport_name>
+    endpoint is the app ip
+
+kubectl get pod -o wide
+    ip should be endpoint of node port
+
+
+testing
+kubectl exec -it busybox-pod -- sh
+wget -O- <node_ip>:<nodeport_port_value>
+example : wget -O- 10.224.0.199:30036

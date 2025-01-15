@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+
+metadata:
+  name: network-policy1
+  namespace: default
+
+spec:
+  podSelector:
+    matchLabels:
+      app: webapp1
+  policyTypes: # block all network traffic to and from matching pods
+    - Ingress
+    - Egress

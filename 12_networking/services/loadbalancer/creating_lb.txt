@@ -1,0 +1,10 @@
+lb get high availability
+
+get the manifest information (pod and service)
+cat <pod-manifest>
+cat <lb-manifest>
+
+kubectl apply -f <pod_manifest>
+kubectl apply -f <lb_manifest>
+
+kubectl delete service <servicename>

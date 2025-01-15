@@ -1,0 +1,26 @@
+create runing pod without using manifest
+kubectl run pod1 --image nginx -l environment=sandbox
+kubectl run pod2 --image nginx -l environment=production
+    -- image <image name>
+    - l refers to labeling (under the metadata section)
+
+kubectl get pods -o wide
+
+texting connectivity
+kubectl exec -it pod1 -- curl 10.224.0.211
+    where 10.224.0.211 is pod2 IP and 10.224.0.62 is pod1 IP
+
+create network policy
+kubectl apply -f network-policy.yaml
+kubectl get networkpolicy
+
+testing connectivity
+it should work
+kubectl exec -it pod1 -- curl 10.224.0.211
+
+
+kubectl run pod3 --image nginx -l environment=configuration
+
+testing connectivity
+it shouldn't work
+kubectl exec -it pod3 -- curl 10.224.0.211

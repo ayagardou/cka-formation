@@ -1,0 +1,17 @@
+### INFO ARE SHOWN FROM THE SPEC SECTION
+# CHECK INDENTATION
+
+spec:
+  policyTypes:
+    - Ingress
+    - Egress
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: webfrontend
+    egress:
+    - to:
+      - podSelector:
+          matchLabels:
+            app: webfrontend

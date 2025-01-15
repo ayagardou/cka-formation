@@ -1,0 +1,13 @@
+... # previous information
+
+- http:
+    paths:
+    - path: /upload
+      pathType: Prefix
+      backend:
+        service:
+          name: uploadbackend
+          port:
+            number: 443
+
+... # next information
