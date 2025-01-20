@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Deployment
+
+metadata:
+  name: nginx-deployment
+
+spec: # START OF DEPLOYMENT DEFINITION
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx # END OF DEPLOYMENT DEFINITION
+    spec: # START OF POD DEFINITION
+      containers:
+      - name: nginx
+        image: nginx:latest # END OF POD DEFINITION

@@ -1,0 +1,15 @@
+...
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+
+--- # INDICATE A DIFFERENT MANIFEST
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: nginx-service
+
+...

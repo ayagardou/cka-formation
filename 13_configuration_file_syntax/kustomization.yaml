@@ -1,0 +1,5 @@
+secretGenerator:
+- name: kustomiez-user-creds1
+  literals:
+  - username=app1admin
+  - password=1f2d1e2e67dg
