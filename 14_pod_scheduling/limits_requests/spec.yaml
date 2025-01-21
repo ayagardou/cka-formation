@@ -1,0 +1,12 @@
+...
+spec:
+  containers:
+  - name: caddy
+    image: caddy:latest
+    resources:
+      limits:
+        memory: 600Mi
+        cpu: 1
+      requests:
+        memory: 300Mi
+        cpu: 500m

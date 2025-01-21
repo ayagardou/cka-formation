@@ -1,0 +1,19 @@
+aoiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: app2-replicaset
+  labels:
+    tier: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: app2frontend
+  template:
+    metadata:
+      labels:
+        tier: app2frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
